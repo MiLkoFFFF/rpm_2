@@ -1,0 +1,17 @@
+﻿[
+  {
+    "Name": "Велосипед",
+    "Price": 200,
+    "Quantity": 5
+  },
+  {
+    "Name": "Лыжи",
+    "Price": 150,
+    "Quantity": 3
+  },
+  {
+    "Name": "Сноуборд",
+    "Price": 250,
+    "Quantity": 2
+  }
+]
