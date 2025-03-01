@@ -5,8 +5,33 @@
     "Quantity": 10
   },
   {
+    "Name": "2",
+    "Price": 2.0,
+    "Quantity": 2
+  },
+  {
+    "Name": "12",
+    "Price": 12.0,
+    "Quantity": 12
+  },
+  {
+    "Name": "Шашлык",
+    "Price": 24.0,
+    "Quantity": 2
+  },
+  {
+    "Name": "Азубка",
+    "Price": 243.0,
+    "Quantity": 2
+  },
+  {
+    "Name": "Колеса",
+    "Price": 100.0,
+    "Quantity": 53
+  },
+  {
     "Name": "Коньки",
-    "Price": 300.0,
-    "Quantity": 4
+    "Price": 97.0,
+    "Quantity": 17
   }
 ]

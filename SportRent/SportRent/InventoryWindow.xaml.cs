@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using Newtonsoft.Json;
-using static Newtonsoft.Json.Formatting;
 
 namespace SportRent
 {
@@ -33,6 +33,10 @@ namespace SportRent
                 string jsonData = File.ReadAllText(filePath);
                 inventoryItems = JsonConvert.DeserializeObject<List<InventoryItem>>(jsonData);
             }
+            else
+            {
+                inventoryItems = new List<InventoryItem>();
+            }
 
             InventoryDataGrid.ItemsSource = inventoryItems;
         }
@@ -45,7 +49,6 @@ namespace SportRent
 
             File.WriteAllText(filePath, jsonData);
         }
-
 
         private void InventoryDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -93,7 +96,7 @@ namespace SportRent
                 DeleteButton.IsEnabled = false;
                 BookButton.IsEnabled = false;
 
-                SaveInventory(); 
+                SaveInventory();
             }
         }
 
@@ -107,5 +110,11 @@ namespace SportRent
             }
         }
 
+        private void SearchTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            string searchText = SearchTextBox.Text.ToLower();
+            var filteredItems = inventoryItems.Where(item => item.Name.ToLower().Contains(searchText)).ToList();
+            InventoryDataGrid.ItemsSource = filteredItems;
+        }
     }
 }
